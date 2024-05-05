@@ -1,0 +1,52 @@
+#include <stdio.h>
+
+int main() {
+    float saldo = 0.0; // Saldo inicial é zero
+    int opcao;
+    float valor;
+
+    do {
+        // Mostra o menu de opções
+        printf("\nMenu de opções:\n");
+        printf("1- Consulta\n");
+        printf("2- Saque\n");
+        printf("3- Depósito\n");
+        printf("4- Sair\n");
+        printf("Escolha uma opção: ");
+        scanf("%d", &opcao);
+
+        switch(opcao) {
+            case 1:
+                // Consulta: imprime o saldo atual
+                printf("Seu saldo é R$ %.2f\n", saldo);
+                break;
+            case 2:
+                // Saque: permite ao usuário sacar um valor do saldo
+                printf("Digite o valor que deseja sacar: R$ ");
+                scanf("%f", &valor);
+                if (valor > saldo) {
+                    printf("Saldo insuficiente.\n");
+                } else {
+                    saldo -= valor;
+                    printf("Saque de R$ %.2f realizado com sucesso.\n", valor);
+                }
+                break;
+            case 3:
+                // Depósito: permite ao usuário depositar um valor no saldo
+                printf("Digite o valor que deseja depositar: R$ ");
+                scanf("%f", &valor);
+                saldo += valor;
+                printf("Depósito de R$ %.2f realizado com sucesso.\n", valor);
+                break;
+            case 4:
+                // Sair: encerra o programa
+                printf("Saindo...\n");
+                break;
+            default:
+                // Opção inválida
+                printf("Opção inválida. Por favor, escolha uma opção válida.\n");
+        }
+    } while (opcao != 4); // Repete até que o usuário escolha a opção de sair
+
+    return 0;
+}
