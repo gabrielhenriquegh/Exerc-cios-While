@@ -1,0 +1,41 @@
+#include <stdio.h>
+
+#include <stdio.h>
+
+int main() {
+    int quantidade_alunos;
+    float peso, soma_peso = 0;
+    int contador = 0;
+
+    // Solicita ao usuário a quantidade de alunos
+    printf("Quantos alunos tem em sua academia? ");
+    scanf("%d", &quantidade_alunos);
+
+    // Verifica se a quantidade de alunos é válida
+    if (quantidade_alunos <= 0) {
+        printf("Quantidade inválida de alunos.\n");
+        return 1; // Encerra o programa com código de erro
+    }
+
+    // Solicita o peso de cada aluno e calcula a soma dos pesos
+    printf("Digite o peso de cada aluno:\n");
+    while (contador < quantidade_alunos) {
+        printf("Peso do aluno %d: ", contador + 1);
+        scanf("%f", &peso);
+
+        // Verifica se o peso é válido
+        if (peso <= 0) {
+            printf("Peso inválido. O peso deve ser positivo.\n");
+            continue; // Volta ao início do loop para solicitar o peso novamente
+        }
+
+        soma_peso += peso;
+        contador++;
+    }
+
+    // Calcula e imprime a média de peso dos alunos
+    float media_peso = soma_peso / quantidade_alunos;
+    printf("A média de peso dos alunos é: %.2f\n", media_peso);
+
+    return 0;
+}
