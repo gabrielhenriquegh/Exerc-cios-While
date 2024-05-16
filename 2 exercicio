@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main() {
+    int vetor[5];
+    int i;
+
+    printf("Digite 5 números:\n");
+
+    // Lendo os números e armazenando no vetor
+    for(i = 0; i < 5; i++) {
+        printf("Número %d: ", i + 1);
+        scanf("%d", &vetor[i]);
+    }
+
+    // Exibindo os números na ordem inversa
+    printf("\nOs números digitados na ordem inversa são:\n");
+    for(i = 4; i >= 0; i--) {
+        printf("%d ", vetor[i]);
+    }
+
+    return 0;
+}
