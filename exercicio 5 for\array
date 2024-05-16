@@ -1,0 +1,43 @@
+#include <stdio.h>
+
+int main() {
+    int numeros[5];
+    int par[5], impar[5];
+    int num_pares = 0, num_impares = 0;
+    int i;
+
+    printf("Digite 5 números inteiros:\n");
+
+    // Lendo os números e armazenando nos vetores par e ímpar
+    for(i = 0; i < 5; i++) {
+        printf("Número %d: ", i + 1);
+        scanf("%d", &numeros[i]);
+        if(numeros[i] % 2 == 0) {
+            par[num_pares] = numeros[i];
+            num_pares++;
+        } else {
+            impar[num_impares] = numeros[i];
+            num_impares++;
+        }
+    }
+
+    // Imprimindo o vetor original
+    printf("\nVetor Original: ");
+    for(i = 0; i < 5; i++) {
+        printf("%d ", numeros[i]);
+    }
+
+    // Imprimindo o vetor par
+    printf("\nVetor Par: ");
+    for(i = 0; i < num_pares; i++) {
+        printf("%d ", par[i]);
+    }
+
+    // Imprimindo o vetor ímpar
+    printf("\nVetor Ímpar: ");
+    for(i = 0; i < num_impares; i++) {
+        printf("%d ", impar[i]);
+    }
+
+    return 0;
+}
